@@ -21,12 +21,20 @@ set( SRC
 	main.cpp
 	${PROJECT_SOURCE_DIR}/src/glad.c
 	${PROJECT_SOURCE_DIR}/src/shader.cpp
+	${PROJECT_SOURCE_DIR}/src/stb_image.cpp
 )
 
 include_directories(
 	${PROJECT_SOURCE_DIR}/include
 	${PROJECT_SOURCE_DIR}/src
 )
+
+set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
+
+file(COPY ${PROJECT_SOURCE_DIR}/resources
+     DESTINATION ${EXECUTABLE_OUTPUT_PATH})
+file(COPY ${PROJECT_SOURCE_DIR}/shaders
+     DESTINATION ${EXECUTABLE_OUTPUT_PATH})
 
 add_executable(main ${SRC} )
 
