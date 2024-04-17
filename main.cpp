@@ -84,7 +84,7 @@ int main(int, char**)
     }
     else
     {
-        //throw std::runtime_error("Failed to load texture");
+        throw std::runtime_error("Failed to load texture");
     }
     stbi_image_free(data);
 
